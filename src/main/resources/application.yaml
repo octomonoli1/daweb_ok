@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: daweb
+  datasource:
+    url: jdbc:mysql://localhost:3306/daweb
+    username: root
+    pasword: root
+
