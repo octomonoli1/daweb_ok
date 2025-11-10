@@ -16,22 +16,22 @@ services:
       - spring-net
 
   # Aplicación Spring Boot
-  #app:
-  #  image: openjdk:26-ea-trixie
-  #  container_name: spring-app
-  #  restart: always
-  #  depends_on:
-  #    - mariadb
-  #  environment:
-  #    SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/daweb
-  #    SPRING_DATASOURCE_USERNAME: root
-  #    SPRING_DATASOURCE_PASSWORD: root
-  #    SPRING_JPA_HIBERNATE_DDL_AUTO: update
-  #    SPRING_JPA_SHOW_SQL: "true"
-  #  ports:
-  #    - "8080:8080"
-  #  networks:
-  #    - spring-net
+#  app:
+#    build: .
+#    container_name: spring-app
+#    restart: always
+#    depends_on:
+#      - mariadb
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/daweb
+#      SPRING_DATASOURCE_USERNAME: root
+#      SPRING_DATASOURCE_PASSWORD: root
+#      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+#      SPRING_JPA_SHOW_SQL: "true"
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      - spring-net
 
 volumes:
   mariadb_data:
