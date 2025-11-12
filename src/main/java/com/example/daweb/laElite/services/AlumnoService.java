@@ -11,7 +11,7 @@ public class AlumnoService {
     @Autowired
     private AlumnoRepository alumnoRepository;
 
-    private Alumno create(Alumno alumno){
+    public Alumno create(Alumno alumno){
         return alumnoRepository.save(alumno);
     }
 }
