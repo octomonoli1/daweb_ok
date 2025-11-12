@@ -1,4 +1,4 @@
 package com.example.daweb.laElite.services;
 
-public class prueba {
+public class AlumnoService {
 }
