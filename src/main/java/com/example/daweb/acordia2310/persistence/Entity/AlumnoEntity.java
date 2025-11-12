@@ -14,7 +14,6 @@ public class AlumnoEntity {
     @Setter
     @NoArgsConstructor
     public class Alumno {
-
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
