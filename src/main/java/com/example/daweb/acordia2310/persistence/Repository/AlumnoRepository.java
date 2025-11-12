@@ -6,5 +6,4 @@ import org.springframework.data.repository.ListCrudRepository;
 import java.util.List;
 
 public interface AlumnoRepository extends ListCrudRepository<AlumnoEntity, Integer>{
-    List<AlumnoEntity> findByName(String name);
 }
