@@ -22,4 +22,32 @@ public class AlumnoController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
         }
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable int id) {
+        try {
+            alumnoService.deleteById(id);
+            return ResponseEntity.ok("Alumno " + id + " eliminado correctamente.");
+        } catch (AlumnoNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findById(@PathVariable int id){
+        try{
+            return ResponseEntity.ok(this.alumnoService.findById(id));
+        }catch (AlumnoNotFoundException e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/name/{name}")
+    public ResponseEntity<?> findByName(@RequestParam String name){
+        try{
+            return ResponseEntity.ok(this.alumnoService.findByName(name));
+        }catch (AlumnoNotFoundException ex){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+        }
+    }
 }
