@@ -19,4 +19,6 @@ public class AlumnoServices {
     public List<AlumnoEntity> findAll() {
         return this.alumnoRepository.findAll();
     }
+
+
 }
