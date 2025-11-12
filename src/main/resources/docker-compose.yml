@@ -1,0 +1,40 @@
+services:
+  mariadb:
+    image: mariadb:11
+    container_name: daweb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: daweb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - spring-net
+
+  # Aplicación Spring Boot
+  #app:
+  #  image: openjdk:26-ea-trixie
+  #  container_name: spring-app
+  #  restart: always
+  #  depends_on:
+  #    - mariadb
+  #  environment:
+  #    SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/daweb
+  #    SPRING_DATASOURCE_USERNAME: root
+  #    SPRING_DATASOURCE_PASSWORD: root
+  #    SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  #    SPRING_JPA_SHOW_SQL: "true"
+  #  ports:
+  #    - "8080:8080"
+  #  networks:
+  #    - spring-net
+
+volumes:
+  mariadb_data:
+
+networks:
+  spring-net:
