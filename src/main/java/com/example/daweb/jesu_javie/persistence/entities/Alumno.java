@@ -1,4 +1,4 @@
-package com.example.daweb.jesu_javie.persintence.entities;
+package com.example.daweb.jesu_javie.persistence.entities;
 
 
 import jakarta.persistence.*;
