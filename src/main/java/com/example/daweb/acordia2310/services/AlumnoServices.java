@@ -2,12 +2,10 @@ package com.example.daweb.acordia2310.services;
 
 import com.example.daweb.acordia2310.persistence.Entity.AlumnoEntity;
 import com.example.daweb.acordia2310.persistence.Repository.AlumnoRepository;
-import com.example.daweb.acordia2310.services.Exceptions.AlumnoException;
 import com.example.daweb.acordia2310.services.Exceptions.AlumnoNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
