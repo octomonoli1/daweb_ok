@@ -25,20 +25,4 @@ public class AlumnoServices {
             throw new AlumnoNotFoundException("No se encuentra el alumno asignado");
         }
     }
-
-    public void deleteById(int id) {
-        if (!alumnoRepository.existsById(id)) {
-            throw new AlumnoNotFoundException("Alumno con id " + id + " no encontrado.");
-        }
-        alumnoRepository.deleteById(id);
-    }
-
-    public List<AlumnoEntity> findByName(String name){
-        List<AlumnoEntity> alumnos = this.alumnoRepository.findByName(name);
-        if(alumnos.isEmpty()){
-            throw new AlumnoNotFoundException("No se ha encontrado ningun alumno con este nombre");
-        }else{
-            return this.alumnoRepository.findByName(name);
-        }
-    }
 }
