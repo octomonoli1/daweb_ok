@@ -19,7 +19,7 @@ public class AlumnoService {
         if(alumnos.isEmpty()){
             throw new AlumnoNotFoundException("No se ha encontrado ningun alumno con este nombre");
         }else{
-            return this.alumnoRepository.findByName(name);
+            return alumnos;
         }
     }
 }
