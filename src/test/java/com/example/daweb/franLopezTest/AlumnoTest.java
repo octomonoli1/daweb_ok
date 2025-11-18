@@ -1,12 +1,9 @@
-package com.example.daweb.franLopezTest;
+package com.example.daweb.franLopez.web.controller;
 
 import com.example.daweb.franLopez.entities.Alumno;
 import com.example.daweb.franLopez.services.AlumnoService;
 import com.example.daweb.franLopez.services.exceptions.AlumnoException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +11,12 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import com.example.daweb.franLopez.web.controller.AlumnoController;
-
 
 import java.time.LocalDate;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.hamcrest.Matchers.containsString;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(AlumnoController.class)
 class AlumnoControllerTest {
@@ -35,15 +27,7 @@ class AlumnoControllerTest {
     @MockBean
     private AlumnoService alumnoService;
 
-    // ObjectMapper configurado para LocalDate
     private final ObjectMapper mapper = new ObjectMapper();
-
-    @BeforeEach
-    void setUp() {
-        // Registrar módulo para soporte de java.time (LocalDate) y desactivar timestamps
-        mapper.registerModule(new JavaTimeModule());
-        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-    }
 
     // ===== TEST POSITIVO =====
     @Test
@@ -60,8 +44,8 @@ class AlumnoControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(alumno)))
                 .andExpect(status().isCreated())
-                .andExpect(content().string(containsString("Alumno creado correctamente")))
-                .andExpect(content().string(containsString("1")));
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Alumno creado correctamente")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("1")));
     }
 
     // ===== TEST NEGATIVO: nombre vacío =====
@@ -78,7 +62,7 @@ class AlumnoControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(alumno)))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string(containsString("El nombre del alumno no puede estar vacío")));
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("El nombre del alumno no puede estar vacío")));
     }
 
     // ===== TEST NEGATIVO: fecha de nacimiento futura =====
@@ -96,7 +80,7 @@ class AlumnoControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(alumno)))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string(containsString("La fecha de nacimiento debe ser anterior a la fecha actual")));
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("La fecha de nacimiento debe ser anterior a la fecha actual")));
     }
 
     // ===== TEST NEGATIVO: error inesperado del servidor =====
@@ -114,6 +98,6 @@ class AlumnoControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(alumno)))
                 .andExpect(status().isInternalServerError())
-                .andExpect(content().string(containsString("Error al crear el alumno")));
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Error al crear el alumno")));
     }
 }
