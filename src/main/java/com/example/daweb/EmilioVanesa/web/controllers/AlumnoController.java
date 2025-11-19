@@ -1,7 +1,7 @@
-package com.example.daweb.controllers;
+package com.example.daweb.EmilioVanesa.web.controllers;
 
-import com.example.daweb.service.AlumnoService;
-import com.example.daweb.service.exceptions.AlumnoNotFoundException;
+import com.example.daweb.EmilioVanesa.service.AlumnoService;
+import com.example.daweb.EmilioVanesa.service.exceptions.AlumnoNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
