@@ -23,7 +23,7 @@ public class AlumnoService {
         }
         return alumnoRepository.save(alumno);
     }
-
+/*
     // findByID
     public Alumno findById(int id) {
         if (!alumnoRepository.existsById(id)) {
@@ -54,5 +54,5 @@ public class AlumnoService {
             throw new AlumnoNotFoundException("El ID " + id + " no existe, no se puede borrar");
         }
         alumnoRepository.deleteById(id);
-    }
+    }*/
 }

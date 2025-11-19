@@ -28,6 +28,7 @@ public class AlumnoController {
         }
     }
 
+    /*
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable int id, @RequestBody Alumno alumno) {
         try {
@@ -48,4 +49,5 @@ public class AlumnoController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
         }
     }
+    */
 }
