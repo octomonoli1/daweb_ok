@@ -1,4 +1,4 @@
-package com.example.daweb.persistence.entities;
+package com.example.daweb.EmilioVanesa.persistence.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

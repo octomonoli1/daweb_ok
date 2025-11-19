@@ -1,6 +1,6 @@
-package com.example.daweb.persistence.repositories;
+package com.example.daweb.EmilioVanesa.persistence.repositories;
 
-import com.example.daweb.persistence.entities.Alumno;
+import com.example.daweb.EmilioVanesa.persistence.entities.Alumno;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,8 @@
-package com.example.daweb.service;
+package com.example.daweb.EmilioVanesa.service;
 
-import com.example.daweb.persistence.entities.Alumno;
-import com.example.daweb.persistence.repositories.AlumnoRepository;
-import com.example.daweb.service.exceptions.AlumnoNotFoundException;
+import com.example.daweb.EmilioVanesa.persistence.entities.Alumno;
+import com.example.daweb.EmilioVanesa.persistence.repositories.AlumnoRepository;
+import com.example.daweb.EmilioVanesa.service.exceptions.AlumnoNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
