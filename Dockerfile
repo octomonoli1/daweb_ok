@@ -6,7 +6,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Compilamos y generamos el JAR
-RUN mvn clean package -DskipTests
+RUN mvn clean package
 
 FROM eclipse-temurin:21-jdk-alpine
 
