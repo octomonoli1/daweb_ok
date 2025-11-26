@@ -4,14 +4,16 @@ import com.example.daweb.spcajc.persistence.entities.Alumno;
 import com.example.daweb.spcajc.persistence.repositories.AlumnoRepository;
 import com.example.daweb.spcajc.service.exceptions.AlumnoNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("alumnoServiceSpcajc")
 public class AlumnoService {
 
     @Autowired
+    @Qualifier("alumnoRepositorySpcajc")
     private AlumnoRepository alumnoRepository;
 
     public List<Alumno> findByName(String name){

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository("alumnoRepositorySpcajc")
 public interface AlumnoRepository extends ListCrudRepository<Alumno, Integer> {
     List<Alumno> findByName(String name);
 }
