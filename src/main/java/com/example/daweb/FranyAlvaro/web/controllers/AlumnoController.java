@@ -2,6 +2,7 @@ package com.example.daweb.FranyAlvaro.web.controllers;
 
 import com.example.daweb.FranyAlvaro.services.AlumnoService;
 import com.example.daweb.FranyAlvaro.services.exceptions.AlumnoNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("alumnoControllerFranyAlvaro")
 @RequestMapping("/alumnos")
 public class AlumnoController {
 

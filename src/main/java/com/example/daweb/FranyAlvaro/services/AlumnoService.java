@@ -5,9 +5,8 @@ import com.example.daweb.FranyAlvaro.services.exceptions.AlumnoNotFoundException
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("alumnoServiceFranyAlvaro")
 public class AlumnoService {
-
     @Autowired
     private AlumnoRepository alumnoRepository;
 
@@ -19,3 +18,4 @@ public class AlumnoService {
     }
 
 }
+
