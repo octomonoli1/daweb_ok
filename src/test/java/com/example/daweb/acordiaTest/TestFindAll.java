@@ -3,15 +3,17 @@ package com.example.daweb.acordiaTest;
 import com.example.daweb.RaquelyMiguel.persistence.entities.Alumno;
 import com.example.daweb.RaquelyMiguel.persistence.repositories.AlumnoRepository;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.List;
 
 @SpringBootTest
 public class TestFindAll {
+
+    @Mock
+    private AlumnoRepository alumnoRepository;
 
     @Test
     void testFindAll() {
@@ -22,5 +24,4 @@ public class TestFindAll {
 
         assert repo.findAll().size() == 2;
     }
-
 }

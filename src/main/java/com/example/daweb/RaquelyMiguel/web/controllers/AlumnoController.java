@@ -14,7 +14,7 @@ public class AlumnoController {
     @Autowired
     private AlumnoService alumnoService;
 
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<?> findAll(){
         return ResponseEntity.ok(this.alumnoService.findAll());
     }
