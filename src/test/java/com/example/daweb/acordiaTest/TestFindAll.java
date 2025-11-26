@@ -12,9 +12,6 @@ import java.util.Arrays;
 @SpringBootTest
 public class TestFindAll {
 
-    @Mock
-    private AlumnoRepository alumnoRepository;
-
     @Test
     void testFindAll() {
         AlumnoRepository repo = Mockito.mock(AlumnoRepository.class);
