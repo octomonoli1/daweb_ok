@@ -5,10 +5,7 @@ import com.example.daweb.RaquelyMiguel.services.exceptions.AlumnoNotFoundExcepti
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/alumnos")
@@ -16,6 +13,11 @@ public class AlumnoController {
 
     @Autowired
     private AlumnoService alumnoService;
+
+    @GetMapping
+    public ResponseEntity<?> findAll(){
+        return ResponseEntity.ok(this.alumnoService.findAll());
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable int id) {

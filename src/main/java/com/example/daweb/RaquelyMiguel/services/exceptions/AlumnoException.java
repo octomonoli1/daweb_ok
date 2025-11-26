@@ -1,4 +1,4 @@
-package com.example.daweb.acordia2310.services.Exceptions;
+package com.example.daweb.RaquelyMiguel.services.exceptions;
 
 public class AlumnoException extends RuntimeException {
     public AlumnoException(String message) {
